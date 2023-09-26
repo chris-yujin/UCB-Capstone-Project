@@ -30,7 +30,6 @@ function updateValue(){
     b = d3.select("#customRange2").property("value")
     c = d3.select("#customRange3").property("value")
     d3.json("/predict/"+a+"/"+b+"/"+c).then(function(data){
-        console.log(data)
         d3.select("#dynamic").text(data["cluster"])
         d3.select("#dynamic2").text(data["sum"])
     })
