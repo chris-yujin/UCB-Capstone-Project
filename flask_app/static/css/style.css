@@ -1,0 +1,18 @@
+#map{
+  height: 350px;
+  border-radius: 10px;
+}
+
+.chart{
+  border-radius: 10px;
+  background-color: white;
+}
+
+#bg{
+  background-color: rgb(157, 255, 255, 0.3);
+}
+
+h2{
+  padding-top:15px;
+  padding-bottom:10px;
+}
