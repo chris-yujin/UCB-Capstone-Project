@@ -23,9 +23,7 @@ import pickle_models as pkl
 #################################################
 from etl_pipeline import load 
 
-# a = t.build_blobs()
-# model = t.train_model(a)
-# a2 = t.view_clusters(model, a)
+
 clean_df = load.loadcleandata()
 
 #################################################
@@ -34,7 +32,6 @@ clean_df = load.loadcleandata()
 o_model = pkl.read_om_model()
 c_model = pkl.read_c_model()
 d_model = pkl.read_d_model()
-# new_input = new_input = [[4.121429,24.8,18.4, 44.0, 73.2, 33.0, 36.1, 16.9, 28.8, 35.5, 41.0]]
 
 # Create SQLAlchemy engine to connect to Postgresql Database
 
@@ -82,9 +79,7 @@ def predict(a,b,c,d,e,f,g,h,i):
                    diabetes_prevalance=float(pkl.all_predict(o_model,c_model, d_model, a,b,c,d,e,f,g,h,i)[2]),
                    )
 
-# @app.route("/obesity_model")
-# def om_user_input():
-#     return jsonify(om.om_predict(o_model, new_input))
+
 
 @app.route("/gettable")
 def gettable():

@@ -102,22 +102,7 @@ d3.select("#text-input").on("change", function () {
             d3.select("#customRange8").property("value", data["no_leisure_physical_activity"]);
             d3.select("#customRange9").property("value", data["less_7_hours_sleep"]);
             
-           
-
-            // d3.selectAll("input"){
-            //     let a = data["income_per_individual"];
-            //     console.log(a);
-            //     // d3.select("#"+event.target.id+"l").text(event.target.name+": "+event.target.value)
-            //     d3.select(event+"#customRange1l").text(event+"Income Per Individual (Thousands):"+a);
-            //     d3.select("#customRange2l").property("value", data["lacking_health_insurance"]);
-            //     d3.select("#customRange3l").property("value", data["binge_drinking"]);
-            //     d3.select("#customRange4l").property("value", data["high_blood_pressure"]);
-            //     d3.select("#customRange5l").property("value", data["routine_check_ups"]);
-            //     d3.select("#customRange6l").property("value", data["currently_smoking"]);
-            //     d3.select("#customRange7l").property("value", data["depressed"]);
-            //     d3.select("#customRange8l").property("value", data["no_leisure_physical_activity"]);
-            //     d3.select("#customRange9l").property("value", data["less_7_hours_sleep"]);
-            // }
+        
             updateValue()
           
             
