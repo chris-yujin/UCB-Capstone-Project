@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block check %}
+<body onload=writeTable()>
+{%endblock%}
+
+{% block load %}
+<div class="row text-center p-2">
+  <h2>Done Loading</h2>
+</div>
+
+<div class="row text-center p-2">
+<label for="text-input">Enter Zipcode:</label>
+    <input type="text" id="text-input" name="user-text">
+</div>
+
+<div class="row text-center p-2">
+  <p>You're looking at Zipcode: <span id="user-input-display"></span></p>
+</div>
+
+<label for="customRange1" class="form-label" id="customRange1l">Income Per Individual (Thousands): 0</label>
+<input type="range" min="0" max="250" value="0" step="0.1" class="form-range" id="customRange1" name="Income Per Individual in Thousands">
+
+<label for="customRange2" class="form-label" id="customRange2l">% Lacking Health Insurance: 0</label>
+<input type="range" min="0" max="100" value="0" step="0.1" class="form-range" id="customRange2" name="% Lacking Health Insurance">
+
+<label for="customRange3" class="form-label" id="customRange3l">% Binge Drinking: 0</label>
+<input type="range" min="0" max="100" value="0" step="0.1" class="form-range" id="customRange3" name="% Binge Drinking">
+
+<label for="customRange4" class="form-label" id="customRange4l">% High Blood Pressure: 0</label>
+<input type="range" min="0" max="100" value="0" step="0.1" class="form-range" id="customRange4" name="% High Blood Pressure">
+
+<label for="customRange5" class="form-label" id="customRange5l">% Routine Check Ups: 0</label>
+<input type="range" min="0" max="100" value="0" step="0.1" class="form-range" id="customRange5" name="% Routine Check Ups">
+
+<label for="customRange6" class="form-label" id="customRange6l">% Currently Smoking: 0</label>
+<input type="range" min="0" max="100" value="0" step="0.1" class="form-range" id="customRange6" name="% Currently Smoking">
+
+<label for="customRange7" class="form-label" id="customRange7l">% Depressed: 0</label>
+<input type="range" min="0" max="100" value="0" step="0.1" class="form-range" id="customRange7" name="% Depressed">
+
+<label for="customRange8" class="form-label" id="customRange8l">% No Leisure-Time Physical Activity: 0</label>
+<input type="range" min="0" max="100" value="0" step="0.1" class="form-range" id="customRange8" name="% No Leisure-Time Physical Activity">
+
+<label for="customRange9" class="form-label" id="customRange9l">% Less Than 7 Hrs of Sleep: 0</label>
+<input type="range" min="0" max="100" value="0" step="0.1" class="form-range" id="customRange9" name="% Less Than 7 Hrs of Sleep">
+
+
+<div class="row text-center p-2">
+  <p><b>Cancer Prevalence in my Area:</b>  <span id="dynamic_cancer">?</span></p>
+  <p><b>Diabetes Prevalence in my Area:</b>  <span id="dynamic_diabetes">?</span></p>
+  <p><b>Obesity Prevalence in my Area:</b>  <span id="dynamic_obesity">?</span></p>
+  <!-- <p><b>My sum is:</b> Sum <span id="dynamic2">0</span></p> -->
+</div>
+
+<div class="row text-center p-2">
+  <h2>Reference Table</h2>
+</div>
+
+<div class="row text-left p-2">
+  <table class="table-light">
+    <thead>
+      <tr>
+        <th scope="col">Zipcode</th>
+        <th scope="col">State</th>
+        <th scope="col">Income Per Capita</th>
+        <th scope="col">Lacking Health Insurance</th>
+        <th scope="col">Binge Drinking</th>
+        <th scope="col">High Blood Pressure</th>
+        <th scope="col">Routine Health Checkups</th>
+        <th scope="col">Currently Smoking</th>
+        <th scope="col">Depression</th>
+        <th scope="col">No Leisure-Time Physical Activity</th>
+        <th scope="col">Less than 7 Hours of Sleep</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+{% endblock %} 

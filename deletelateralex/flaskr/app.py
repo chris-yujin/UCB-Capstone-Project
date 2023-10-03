@@ -11,8 +11,10 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, text
 import psycopg2
 
+
 # You can put your ML functions somewhere out here
 import testimport as t
+# import obesity_model as om
 
 #################################################
 # Database Setup
@@ -22,8 +24,12 @@ a = t.build_blobs()
 model = t.train_model(a)
 a2 = t.view_clusters(model, a)
 
-# Create SQLAlchemy engine to connect to MySQL Database
-engine = create_engine("postgresql+psycopg2://postgres:postgres@localhost:5432/test_db")
+
+
+# Create SQLAlchemy engine to connect to Postgresql Database
+
+
+engine = create_engine("postgresql+psycopg2://postgres:@localhost:5432/test_db")
 
 # Convert dataframe to sql table                                   
 a2.to_sql('datapoints', engine, index=False, if_exists="replace")
@@ -58,6 +64,7 @@ def mltrain():
 def predict(a,b,c):
     test = float(a)+float(b)+float(c)
     return jsonify(sum=round(test,2), cluster=int(t.predict(model, a,b,c)))
+
 
 @app.route("/gettable")
 def gettable():
