@@ -91,6 +91,10 @@ d3.select("#text-input").on("change", function () {
                 `
             )
             
+            // d3.selectAll("input").on("change", function(event){
+            //     d3.select("#"+event.target.id+"l").text(event.target.name+": "+event.target.value)})
+
+
             // Update the sliders with the fetched values
             d3.select("#customRange1").property("value", data["income_per_individual"]);
             d3.select("#customRange2").property("value", data["lacking_health_insurance"]);
@@ -101,6 +105,23 @@ d3.select("#text-input").on("change", function () {
             d3.select("#customRange7").property("value", data["depressed"]);
             d3.select("#customRange8").property("value", data["no_leisure_physical_activity"]);
             d3.select("#customRange9").property("value", data["less_7_hours_sleep"]);
+
+            for(let x =1; x < 10; x++){
+                let target = d3.select('#customRange'+x)
+                d3.select("#"+target.property('id')+"l").text(target.property('name')+": "+target.property('value'))
+
+            }
+            
+
+            // d3.select("#customRange1l").text(data["income_per_individual"]);
+            // d3.select("#customRange2l").text("value", data["lacking_health_insurance"]);
+            // d3.select("#customRange3l").text("value", data["binge_drinking"]);
+            // d3.select("#customRange4l").text("value", data["high_blood_pressure"]);
+            // d3.select("#customRange5l").text("value", data["routine_check_ups"]);
+            // d3.select("#customRange6l").text("value", data["currently_smoking"]);
+            // d3.select("#customRange7l").text("value", data["depressed"]);
+            // d3.select("#customRange8l").text("value", data["no_leisure_physical_activity"]);
+            // d3.select("#customRange9l").text("value", data["less_7_hours_sleep"]);
             
         
             updateValue()
